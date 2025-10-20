@@ -1,6 +1,6 @@
 {
   "name": "multi-cloud-data-migrator",
-  "version": "1.258.37",
+  "version": "1.258.39",
   "description": "Salesforce CLI plugin to migrate Salesforce Clouds data",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,7 +25,6 @@
     "open": "^8.4.2",
     "p-queue": "^8.1.0",
     "semver": "^7.7.3",
-    "tinyfiledialogs-node": "^1.2.1",
     "ws": "^8.18.0"
   },
   "oclif": {
