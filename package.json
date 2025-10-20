@@ -1,6 +1,6 @@
 {
   "name": "multi-cloud-data-migrator",
-  "version": "1.258.45",
+  "version": "1.258.46",
   "description": "Salesforce CLI plugin to migrate Salesforce Clouds data",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
