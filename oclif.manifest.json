@@ -1,0 +1,252 @@
+{
+  "commands": {
+    "multi-cloud-data-migrator": {
+      "aliases": [],
+      "args": {},
+      "description": "Migrate massive data volumes with resumable jobs and memory safeguards.",
+      "flags": {
+        "sourceorg": {
+          "description": "Alias or username of source org",
+          "name": "sourceorg",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "targetorg": {
+          "description": "Alias or username of target org",
+          "name": "targetorg",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "config": {
+          "description": "Name of the configuration file to use (e.g., 'rca')",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "where": {
+          "description": "Global SOQL WHERE clause to append to all queries",
+          "name": "where",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "object": {
+          "description": "From config file: comma-separated list of sObjects to migrate with optional fields and WHERE clauses, e.g., \"Account(Name, Phone, WHERE: Type = 'Customer')\"",
+          "name": "object",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "filter-only": {
+          "dependsOn": [
+            "object"
+          ],
+          "description": "Apply filters from --object to the full migration plan instead of migrating only the specified objects.",
+          "exclusive": [
+            "list-sobjects"
+          ],
+          "name": "filter-only",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "migrationplan": {
+          "description": "Show the migration plan from the specified configuration file",
+          "exclusive": [
+            "custom-query"
+          ],
+          "name": "migrationplan",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "list-sobjects": {
+          "description": "For internal UI use. Lists SObjects from a given config file as JSON.",
+          "exclusive": [
+            "sourceorg",
+            "targetorg",
+            "object",
+            "where",
+            "filter-only",
+            "custom-query"
+          ],
+          "hidden": true,
+          "name": "list-sobjects",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "custom-query": {
+          "description": "Directly provide a SOQL query for a single object migration.",
+          "exclusive": [
+            "object",
+            "migrationplan",
+            "config",
+            "standalone-deep-clone"
+          ],
+          "name": "custom-query",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "custom-sobject": {
+          "dependsOn": [
+            "custom-query"
+          ],
+          "description": "The API name of the SObject for the custom query.",
+          "name": "custom-sobject",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "custom-ext-id": {
+          "dependsOn": [
+            "custom-query"
+          ],
+          "description": "The External ID field for the SObject in the custom query.",
+          "exclusive": [
+            "custom-composite-key"
+          ],
+          "name": "custom-ext-id",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "custom-composite-key": {
+          "dependsOn": [
+            "custom-query"
+          ],
+          "description": "Comma-separated fields for a composite key when using a custom query (e.g., 'Name,Custom_Field__c').",
+          "exclusive": [
+            "custom-ext-id"
+          ],
+          "name": "custom-composite-key",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "resume": {
+          "description": "Resume a migration by providing the path to its state file (e.g., migrationJob-YYYYMMDD-HHMMSS.json).",
+          "name": "resume",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "standalone-deep-clone": {
+          "description": "Provide a Product SKU to use as a parameter in a specialized config file (e.g., pcm).",
+          "exclusive": [
+            "object",
+            "where",
+            "custom-query"
+          ],
+          "name": "standalone-deep-clone",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "export-csv": {
+          "description": "Export records to a directory of CSV files instead of migrating to a target org.",
+          "exclusive": [
+            "targetorg",
+            "import-csv"
+          ],
+          "name": "export-csv",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "import-csv": {
+          "description": "Import records from a directory of CSV files instead of a source org.",
+          "exclusive": [
+            "sourceorg",
+            "standalone-deep-clone",
+            "where",
+            "export-csv"
+          ],
+          "name": "import-csv",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "request-license": {
+          "description": "Generate an activation request code to send to the license provider.",
+          "exclusive": [
+            "extend",
+            "sourceorg",
+            "targetorg",
+            "object"
+          ],
+          "name": "request-license",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "extend": {
+          "description": "Provide an encrypted license key to activate or extend the license.",
+          "exclusive": [
+            "migrationplan",
+            "resume",
+            "custom-query"
+          ],
+          "name": "extend",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "licensestatus": {
+          "description": "Check the remaining days on the license.",
+          "exclusive": [
+            "migrationplan",
+            "resume",
+            "custom-query",
+            "sourceorg",
+            "targetorg",
+            "object",
+            "extend",
+            "request-license"
+          ],
+          "name": "licensestatus",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "multi-cloud-data-migrator",
+      "pluginAlias": "multi-cloud-data-migrator",
+      "pluginName": "multi-cloud-data-migrator",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "dist",
+        "commands",
+        "multi-cloud-data-migrator.js"
+      ]
+    },
+    "multi-cloud-data-migrator:ui": {
+      "aliases": [],
+      "args": {},
+      "flags": {},
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "multi-cloud-data-migrator:ui",
+      "pluginAlias": "multi-cloud-data-migrator",
+      "pluginName": "multi-cloud-data-migrator",
+      "pluginType": "core",
+      "strict": true,
+      "summary": "Launches the Multi-Cloud Migrator graphical user interface.",
+      "isESM": false,
+      "relativePath": [
+        "dist",
+        "commands",
+        "multi-cloud-data-migrator",
+        "ui.js"
+      ]
+    }
+  },
+  "version": "1.258.42"
+}
