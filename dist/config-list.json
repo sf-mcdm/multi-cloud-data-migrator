@@ -1,0 +1,21 @@
+{
+  "standard": [
+    "revenue-cloud-advanced",
+    "revenue-cloud-billing",
+    "digital-insurance"
+  ],
+  "deepClone": [
+    {
+      "value": "revenue-cloud-advanced-product",
+      "label": "Product SKU(Stock Keeping Unit)"
+    }, 
+    {
+      "value": "digital-insurance-product",
+      "label": "Product SKU(Stock Keeping Unit)"
+    },
+    {
+      "value": "advanced-configurator-cml",
+      "label": "Cosntraint Model(Expression Set) API Name"
+    }
+  ]
+}
