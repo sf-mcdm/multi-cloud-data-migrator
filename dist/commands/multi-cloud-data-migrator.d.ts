@@ -1,5 +1,6 @@
 import { Command } from "@oclif/core";
 export default class MultiCloudMigrator extends Command {
+    private formatSoqlValue;
     static description: string;
     static flags: {
         readonly "request-license": import("@oclif/core/lib/interfaces/parser.js").BooleanFlag<boolean>;
