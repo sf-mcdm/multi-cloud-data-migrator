@@ -1,0 +1,129 @@
+{
+  "standard": [
+    {
+      "groupLabel": "Revenue Cloud",
+      "options": [
+        {
+          "value": "revenue-cloud-advanced",
+          "displayValue": "Revenue Cloud Advanced",
+          "availableForDestruct": false
+        },
+        {
+          "value": "revenue-cloud-billing",
+          "displayValue": "Revenue Cloud Billing",
+          "availableForDestruct": false
+        }
+      ]
+    },
+    {
+      "groupLabel": "Digital Insurance",
+      "options": [
+        {
+          "value": "digital-insurance",
+          "displayValue": "Digital Insurance Standard",
+          "availableForDestruct": false
+        }
+      ]
+    }
+  ],
+  "deepClone": [
+    {
+      "groupLabel": "Product & Product Management",
+      "options": [
+        {
+          "value": "revenue-cloud-advanced-product",
+          "displayValue": "Revenue Cloud: Product Bundle",
+          "label": "Product SKU(Stock Keeping Unit)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "Product2",
+            "labelField": "Name",
+            "valueField": "StockKeepingUnit"
+          }
+        },
+        {
+          "value": "digital-insurance-product",
+          "displayValue": "Digital Insurance: Product Bundle",
+          "label": "Product SKU(Stock Keeping Unit)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "Product2",
+            "labelField": "Name",
+            "valueField": "StockKeepingUnit"
+          }
+        }
+      ]
+    },
+    {  
+      "groupLabel": "Product Catalogs",
+      "options": [
+        {
+          "value": "revenue-cloud-advanced-product-catalog",
+          "displayValue": "Revenue Cloud Product Catalog",
+          "label": "Catalog Code(Catalog.Code)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "ProductCatalog",
+            "labelField": "Name",
+            "valueField": "Code"
+          }
+        },
+        {
+          "value": "digital-insurance-product-catalog",
+          "displayValue": "Insurance Product Catalog",
+          "label": "Catalog Code(Catalog.Code)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "ProductCatalog",
+            "labelField": "Name",
+            "valueField": "Code"
+          }
+        }
+      ]
+    },
+    {
+      "groupLabel": "Advanced Configurator",
+      "options": [
+        {
+          "value": "advanced-configurator-cml",
+          "displayValue": "Constraint Model Language (CML)",
+          "label": "Constraint Model(Expression Set) API Name",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "ExpressionSet",
+            "labelField": "ExpressionSetDefinition.MasterLabel",
+            "valueField": "ExpressionSetDefinition.DeveloperName",
+            "filter": "UsageType = 'Constraint'"
+          }
+        }
+      ]
+    },
+    {
+      "groupLabel": "Omni Studio Components",
+      "options": [
+        {
+          "value": "data-raptor-standard",
+          "displayValue": "Data Mapper",
+          "label": "Data Mapper Name(OmniDataTransform.Name)",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "OmniDataTransform",
+            "labelField": "Name",
+            "valueField": "Name"
+          }
+        },
+        {
+          "value": "integration-procedure-standard",
+          "displayValue": "Integration Procedure",
+          "label": "Integration Procedure Name(OmniProcess.Name)",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "OmniProcess",
+            "labelField": "Name",
+            "valueField": "Name"
+          }
+        }
+      ]
+    }
+  ]
+}
