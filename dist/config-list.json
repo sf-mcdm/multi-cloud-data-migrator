@@ -1,0 +1,180 @@
+{
+  "standard": [
+    {
+      "groupLabel": "Revenue Cloud",
+      "options": [
+        {
+          "value": "revenue-cloud-advanced",
+          "licenseCode": "rca",
+          "displayValue": "Revenue Cloud Advanced",
+          "availableForDestruct": false
+        },
+        {
+          "value": "revenue-cloud-billing",
+          "licenseCode": "rcb",
+          "displayValue": "Revenue Cloud Billing",
+          "availableForDestruct": false
+        }
+      ]
+    },
+    {
+      "groupLabel": "Digital Insurance",
+      "options": [
+        {
+          "value": "digital-insurance",
+          "licenseCode": "di",
+          "displayValue": "Digital Insurance Standard",
+          "availableForDestruct": false
+        }
+      ]
+    }
+  ],
+  "deepClone": [
+    {
+      "groupLabel": "Product & Product Management",
+      "options": [
+        {
+          "value": "revenue-cloud-advanced-product",
+          "licenseCode": "rca-prod",
+          "displayValue": "Revenue Cloud: Product Bundle",
+          "label": "Product SKU(Stock Keeping Unit)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "Product2",
+            "labelField": "Name",
+            "valueField": "StockKeepingUnit"
+          }
+        },
+        {
+          "value": "digital-insurance-product",
+          "licenseCode": "di-prod",
+          "displayValue": "Digital Insurance: Product Bundle",
+          "label": "Product SKU(Stock Keeping Unit)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "Product2",
+            "labelField": "Name",
+            "valueField": "StockKeepingUnit"
+          }
+        }
+      ]
+    },
+    {
+      "groupLabel": "Product Catalogs",
+      "options": [
+        {
+          "value": "revenue-cloud-advanced-product-catalog",
+          "licenseCode": "rca-cat",
+          "displayValue": "Revenue Cloud Product Catalog",
+          "label": "Catalog Code(Catalog.Code)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "ProductCatalog",
+            "labelField": "Name",
+            "valueField": "Code"
+          }
+        },
+        {
+          "value": "digital-insurance-product-catalog",
+          "licenseCode": "di-cat",
+          "displayValue": "Insurance Product Catalog",
+          "label": "Catalog Code(Catalog.Code)",
+          "availableForDestruct": false,
+          "searchConfig": {
+            "sobject": "ProductCatalog",
+            "labelField": "Name",
+            "valueField": "Code"
+          }
+        }
+      ]
+    },
+    {
+      "groupLabel": "Advanced Configurator",
+      "options": [
+        {
+          "value": "advanced-configurator-cml",
+          "licenseCode": "cml",
+          "displayValue": "Constraint Model Language (CML)",
+          "label": "Constraint Model(Expression Set) API Name",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "ExpressionSet",
+            "labelField": "ExpressionSetDefinition.MasterLabel",
+            "valueField": "ExpressionSetDefinition.DeveloperName",
+            "filter": "UsageType = 'Constraint'"
+          }
+        }
+      ]
+    },
+    {
+      "groupLabel": "Pricing Settings",
+      "options": [
+        {
+          "value": "pricing-recipe",
+          "licenseCode": "prcp",
+          "displayValue": "Pricing Recipe",
+          "label": "PricingRecipe.DeveloperName",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "PricingRecipe",
+            "labelField": "MasterLabel",
+            "valueField": "DeveloperName"
+          }
+        },
+        {
+          "value": "decision-table",
+          "licenseCode": "dtab",
+          "displayValue": "Decision Table Definition",
+          "label": "DecisionTable.DeveloperName",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "DecisionTable",
+            "labelField": "SetupName",
+            "valueField": "DeveloperName"
+          }
+        },
+        {
+          "value": "pricing-procedure",
+          "licenseCode": "pproc",
+          "displayValue": "Pricing Procedure",
+          "label": "Pricing Procedure(Expression Set) API Name",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "ExpressionSetDefinition",
+            "labelField": "MasterLabel",
+            "valueField": "DeveloperName"
+          }
+        }
+      ]
+    },
+    {
+      "groupLabel": "Omni Studio Components",
+      "options": [
+        {
+          "value": "data-raptor-standard",
+          "licenseCode": "drap",
+          "displayValue": "Data Mapper",
+          "label": "Data Mapper Name(OmniDataTransform.Name)",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "OmniDataTransform",
+            "labelField": "Name",
+            "valueField": "Name"
+          }
+        },
+        {
+          "value": "integration-procedure-standard",
+          "licenseCode": "iproc",
+          "displayValue": "Integration Procedure",
+          "label": "Integration Procedure Name(OmniProcess.Name)",
+          "availableForDestruct": true,
+          "searchConfig": {
+            "sobject": "OmniProcess",
+            "labelField": "Name",
+            "valueField": "Name"
+          }
+        }
+      ]
+    }
+  ]
+}
